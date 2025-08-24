@@ -66,11 +66,12 @@ html, body {
   width: 40px;
   height: 40px;
   margin-top: 10px;
+  
   border-radius: 50%;
   border: 1px solid white;      
   outline: 2px solid #4ef485;
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 .video-text {
   display: flex;
@@ -79,6 +80,7 @@ html, body {
   overflow: hidden;
 }
 .video-title {
+  
   font-size: 16px;
   margin: 0;
   font-weight: bold;
