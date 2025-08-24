@@ -1,0 +1,167 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background: #2b2929;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* 상단바 */
+/* 상단바 */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #2b2929;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  
+}
+
+.brand {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Segoe UI', sans-serif; /* 세련된 폰트 */
+  color: #a49e9e;
+  letter-spacing: 1px;
+  text-transform: uppercase; /* MOVO 대문자 */
+}
+
+/* 영상 */
+.video-box {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.video-box video {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: black;
+  border-radius: 8px;
+}
+
+/* 영상 정보 */
+.video-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 800px;
+  padding: 12px 0;
+  box-sizing: border-box;
+  transform: translateY(-4px);
+  padding-left: 8px;   /* 로고 기준 정렬 */
+}
+.channel-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  
+  border-radius: 50%;
+  border: 1px solid white;      
+  outline: 2px solid #4ef485;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+.video-text {
+  position: relative;
+  top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+.video-title {
+  
+  font-size: 16px;
+  margin: 0;
+  margin-left: 11px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ddd;
+}
+.channel-name {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+  margin-left: 10px;
+}
+
+/* 버튼 (채널로고 밑) */
+.video-buttons {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 800px;
+  margin-left: 16px;   /* 채널로고와 정렬 맞춤 */
+  margin-top: 3px;
+  gap: 5px;
+  
+}
+.small-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  background: #3dd871;
+  color: #ddd;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.small-btn:hover {
+  background: #ddd;
+}
+.small-btn a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 채널 이동 버튼 (로고 밑) */
+.channel-nav-inline {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;             /* 전체 폭 차지 */
+  max-width: 800px; 
+  margin-left: 27px;   /* 채널로고 기준 맞춤 */
+  margin-top: 6px;     /* 공유 버튼 밑 살짝 간격 */
+  gap: 20px;           /* ◀ ▶ 간격 */
+}
+
+.channel-nav-inline .arrow {
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+.channel-nav-inline .arrow:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 12px rgba(0,0,0,0.9);
+}
+
+/* 스크롤바 제거 */
+body::-webkit-scrollbar { display: none; }
+body { scrollbar-width: none; }
+body { -ms-overflow-style: none; }
+
+/* 모바일에서만 영상 꽉 차게 */
+@media (max-width: 900px) {
+  .video-box video {
+    max-width: 97% !important;
+    border-radius: 8px;
+  }
+}
+
