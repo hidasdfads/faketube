@@ -63,8 +63,8 @@ html, body {
   padding-left: 8px;   /* 로고 기준 정렬 */
 }
 .channel-logo {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-top: 10px;
   
   border-radius: 50%;
@@ -74,6 +74,8 @@ html, body {
   margin-left: 10px;
 }
 .video-text {
+  position: relative;
+  top: 6px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -83,15 +85,18 @@ html, body {
   
   font-size: 16px;
   margin: 0;
+  margin-left: 11px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #ddd;
 }
 .channel-name {
   font-size: 14px;
   color: gray;
   margin: 0;
+  margin-left: 10px;
 }
 
 /* 버튼 (채널로고 밑) */
@@ -100,14 +105,16 @@ html, body {
   justify-content: flex-start;
   width: 100%;
   max-width: 800px;
-  margin-left: 11px;   /* 채널로고와 정렬 맞춤 */
+  margin-left: 16px;   /* 채널로고와 정렬 맞춤 */
   margin-top: 3px;
   gap: 5px;
+  
 }
 .small-btn {
   padding: 4px 10px;
   font-size: 12px;
-  background: #f1f1f1;
+  background: #3dd871;
+  color: #ddd;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -127,7 +134,7 @@ html, body {
   justify-content: flex-start;
   width: 100%;             /* 전체 폭 차지 */
   max-width: 800px; 
-  margin-left: 11px;   /* 채널로고 기준 맞춤 */
+  margin-left: 27px;   /* 채널로고 기준 맞춤 */
   margin-top: 6px;     /* 공유 버튼 밑 살짝 간격 */
   gap: 20px;           /* ◀ ▶ 간격 */
 }
@@ -157,3 +164,4 @@ body { -ms-overflow-style: none; }
     border-radius: 8px;
   }
 }
+
