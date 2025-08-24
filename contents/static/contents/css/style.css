@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   height: 100%;
   font-family: sans-serif;
-  background: #fff;
+  background: #2b2929;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -16,7 +16,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 60px;
-  background: #fff;
+  background: #2b2929;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,7 +65,10 @@ html, body {
 .channel-logo {
   width: 40px;
   height: 40px;
+  margin-top: 10px;
   border-radius: 50%;
+  border: 1px solid white;      
+  outline: 2px solid #4ef485;
   flex-shrink: 0;
   margin-right: 10px;
 }
@@ -148,7 +151,7 @@ body { -ms-overflow-style: none; }
 /* 모바일에서만 영상 꽉 차게 */
 @media (max-width: 900px) {
   .video-box video {
-    max-width: 100% !important;
-    border-radius: 0;
+    max-width: 97% !important;
+    border-radius: 8px;
   }
 }
