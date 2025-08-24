@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>FakeTube</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'contents/css/style.css' %}">
+</head>
+<body>
+  <!-- 상단바 -->
+  <header class="topbar">
+    <h1 class="brand">Movo</h1>
+  </header>
+
+  {% if channel %}
+    {% for video in videos %}
+    <section class="video-box">
+      <video autoplay muted playsinline controls>
+        {% if video.video_file %}
+          <source src="{{ video.video_file.url }}" type="video/mp4">
+        {% elif video.video_link %}
+          <source src="{{ video.video_link }}">
+        {% endif %}
+      </video>
+
+      <!-- 유튜브 스타일 정보 영역 -->
+      <div class="video-info">
+        <img src="{{ channel.logo.url }}" alt="채널 로고" class="channel-logo">
+        <div class="video-text">
+          <h3 class="video-title">{{ video.title }}</h3>
+          <p class="channel-name">{{ channel.name }}</p>
+        </div>
+      </div>
+
+<!-- 🔥 버튼 2개 (채널 로고 밑, 화살표 위) -->
+<div class="video-buttons">
+  <button class="small-btn" onclick="copyLink('{{ request.build_absolute_uri }}')">SH</button>
+  {% if video.video_link %}
+    <a href="{{ video.video_link }}" target="_blank" class="small-btn">IM</a>
+  {% endif %}
+</div>
+
+      <!-- 좌우 채널 이동 -->
+      <div class="channel-nav-inline">
+        <a href="{% url 'channel_detail' prev_channel.id %}" class="arrow left">◀</a>
+        <a href="{% url 'channel_detail' next_channel.id %}" class="arrow right">▶</a>
+      </div>
+    </section>
+    {% endfor %}
+  {% else %}
+    <p>등록된 채널이 없습니다.</p>
+  {% endif %}
+
+  <script src="{% static 'contents/js/script.js' %}"></script>
+</body>
+</html>
